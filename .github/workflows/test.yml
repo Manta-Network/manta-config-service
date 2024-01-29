@@ -25,15 +25,15 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-pip-
       - name: Set up Python
-        uses: actions/setup-python@v4
+        uses: actions/setup-python@v5
         with:
-          python-version: '3.10'
+          python-version: '3.12.1'
       - name: Install dependencies
         run: |
           pip install -U wheel setuptools
           pip install -r requirements-dev.txt
       - name: flake8
-        uses: liskin/gh-problem-matcher-wrap@v2
+        uses: liskin/gh-problem-matcher-wrap@v3
         with:
           linters: flake8
           run: flake8
@@ -50,15 +50,15 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-pip-
       - name: Set up Python
-        uses: actions/setup-python@v4
+        uses: actions/setup-python@v5
         with:
-          python-version: '3.10'
+          python-version: '3.12.1'
       - name: Install dependencies
         run: |
           pip install -U wheel setuptools
           pip install -r requirements-dev.txt
       - name: isort
-        uses: liskin/gh-problem-matcher-wrap@v2
+        uses: liskin/gh-problem-matcher-wrap@v3
         with:
           linters: isort
           run: isort --check --profile black src/
@@ -75,9 +75,9 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-pip-
       - name: Set up Python
-        uses: actions/setup-python@v4
+        uses: actions/setup-python@v5
         with:
-          python-version: '3.10'
+          python-version: '3.12.1'
       - name: Install dependencies
         run: |
           pip install -U wheel setuptools
@@ -118,9 +118,9 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-pip-
       - name: Set up Python
-        uses: actions/setup-python@v4
+        uses: actions/setup-python@v5
         with:
-          python-version: '3.10'
+          python-version: '3.12.1'
       - name: Install dependencies
         run: |
           pip install -U wheel setuptools
@@ -165,7 +165,7 @@ jobs:
           password: ${{ secrets.DOCKER_PASSWORD }}
       - name: Build and push
         id: docker_build
-        uses: docker/build-push-action@v5.0.0
+        uses: docker/build-push-action@v5.1.0
         with:
           context: .
           platforms: linux/amd64,linux/arm64
@@ -210,7 +210,7 @@ jobs:
           password: ${{ secrets.DOCKER_PASSWORD }}
       - name: Build and push
         id: docker_build
-        uses: docker/build-push-action@v5.0.0
+        uses: docker/build-push-action@v5.1.0
         with:
           context: .
           platforms: linux/amd64,linux/arm64
