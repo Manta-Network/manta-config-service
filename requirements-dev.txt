@@ -1,8 +1,8 @@
 -r requirements.txt
 black==23.12.1
-coverage==7.4.0
+coverage==7.4.1
 factory-boy==3.3.0
-Faker==22.2.0
+Faker==22.5.1
 flake8==7.0.0
 isort==5.13.2
 pre-commit==3.6.0
@@ -13,4 +13,4 @@ responses==0.24.1
 mypy==1.8.0
 django-stubs==4.2.7
 djangorestframework-stubs==3.14.2
-types-requests==2.31.0.20240106
+types-requests==2.31.0.20240125
